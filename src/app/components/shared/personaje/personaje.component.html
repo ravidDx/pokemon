@@ -1,0 +1,25 @@
+<div class="card text-white bg-info ">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>{{personaje.nombre | uppercase}} - {{personaje.numero}}</h1>
+            <h2><small>({{personaje.fecha | date:'yyyy'}})</small></h2>
+            <img [src]="personaje.img" class="card-img-top" [alt]="personaje.nombre">
+            
+        </div>
+
+        <div class="col-sm-6">
+            <div>
+                <div class="card-header">Tipo: {{personaje.tipo}} </div>
+                <div class="card-body">
+                    <h5 class="card-title">Evolucion: {{personaje.nomEvolucion | lowercase}}</h5>
+                    <p class="card-text">{{personaje.descripcion}}</p>
+                    <img [src]="personaje.evolucion" class="card-img-top" [alt]="personaje.nombre">
+            
+                </div>
+            </div>
+        </div>
+        <button (click)="regresar()"  class="btn btn-block btn-primary">regresar</button>
+    </div>
+
+</div>
+

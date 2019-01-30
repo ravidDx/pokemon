@@ -1,0 +1,59 @@
+<h1>Pokemon: <small>{{pokemon.nombre}}</small></h1>
+<hr>
+<div class="card" style="width: 18rem;">
+    <img [src]="pokemon.url" class="card-img-top" alt="...">
+</div>
+
+<div class="row">
+    <div class="col-sm-6 text-left">
+        <button [routerLink]="['/pokemones']"  type="button" class="btn btn-info"><<</button>
+    </div>
+    <div class="col-sm-6 text-right">
+        <button [routerLink]="['/pokemon', 'nuevo']"  type="button" class="btn btn-success">Limpiar</button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Nombre</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="nombre" [(ngModel)]="pokemon.nombre" placeholder="Nombre" >
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Tipo</label>
+                <div class="col-sm-10">
+                        <select class="form-control" name="tipo" [(ngModel)]="pokemon.tipo"  >
+                            <option selected>Choose</option>
+                            <option value="Fuego">Fuego</option>
+                            <option value="Agua">Agua</option>
+                            <option value="Hierba">Hierba</option>
+                        </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Biografia</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="biografia" name="bio" [(ngModel)]="pokemon.bio">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">URL</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="url" name="url" [(ngModel)]="pokemon.url">
+                </div>
+            </div>
+
+            <div class="form-group row" >
+                <button  type="submit" class="btn btn-outline-primary">Guardar</button>
+            </div>
+    
+
+        </form>
+    </div>
+
+</div>

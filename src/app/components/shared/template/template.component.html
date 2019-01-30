@@ -1,0 +1,20 @@
+
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate >
+
+  <div class="form-row">
+    <div class="form-group col-md-6 ">
+      <label for="inputNombre">Nombre</label>
+      <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" required name="nombre" [(ngModel)]="usuario.nombre">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputApellido">Apellido</label>
+      <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" required name="apellido" [(ngModel)]="usuario.apellido">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail">Email</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Email" required name="correo" [(ngModel)]="usuario.correo" >
+  </div>
+  
+  <button type="submit" class="btn btn-primary" [disabled]="!(forma.valid && habilitado)">Guardar</button>
+</form>

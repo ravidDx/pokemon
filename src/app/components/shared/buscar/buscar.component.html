@@ -1,0 +1,12 @@
+<div class="card-columns">
+  <div class="card" *ngFor="let personaje of personajes; let i=index">
+        <img [src]="personaje.img" class="card-img-top" [alt]="personaje.nombre">
+        <div class="card-body">
+          <h5 class="card-title">{{personaje.nombre}}</h5>
+          <p class="card-text">{{personaje.descripcion}}</p>
+          <p class="card-text"><small class="text-muted">{{personaje.fecha}}</small></p>
+          <a [routerLink]="['/personaje',i]" class="btn btn-primary">Ver mas</a>
+          <button (click)="verPersonaje(i)"  class="btn btn-block btn-primary">ver mas ...</button>
+        </div>
+  </div>
+</div>
