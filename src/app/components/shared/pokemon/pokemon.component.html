@@ -1,8 +1,6 @@
 <h1>Pokemon: <small>{{pokemon.nombre}}</small></h1>
 <hr>
-<div class="card" style="width: 18rem;">
-    <img [src]="pokemon.url" class="card-img-top" alt="...">
-</div>
+
 
 <div class="row">
     <div class="col-sm-6 text-left">
@@ -14,8 +12,8 @@
 </div>
 <br>
 <div class="row">
-    <div class="col-md-12">
-        <form>
+    <div class="col-md-7">
+        <form (ngSubmit)="guardar()" #forma="ngForm">
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Nombre</label>
                 <div class="col-sm-10">
@@ -49,11 +47,17 @@
             </div>
 
             <div class="form-group row" >
-                <button  type="submit" class="btn btn-outline-primary">Guardar</button>
+                <button  type="submit" class="btn btn-outline-primary" >Guardar</button>
             </div>
     
 
         </form>
+    </div>
+
+    <div class="col-md-5">
+        <div class="card" style="width: 18rem;">
+            <img [src]="pokemon.url" class="card-img-top poke" alt="...">
+        </div>
     </div>
 
 </div>

@@ -12,16 +12,20 @@
             <th scope="col">Descripcion</th>
             <th scope="col">Nombre</th>
             <th scope="col">Biografia</th>
-            <th scope="col">Tipo</th>  
+            <th scope="col">Tipo</th>
+            <th scope="col">Acciones</th>
+              
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="col">1</th>
-            <th scope="col"><img class="poke" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png"></th>
-            <th scope="col">Squirtle</th>
-            <th scope="col">Lanzar agua</th>
-            <th scope="col">Agua</th>               
+        <tr *ngFor="let pokemon of pokedex; let i=index">
+            <th scope="col">{{i+1}}</th>
+            <th scope="col"><img class="poke" src="{{pokemon.url}}"></th>
+            <th scope="col">{{pokemon.nombre}}</th>
+            <th scope="col">{{pokemon.bio}}</th>
+            <th scope="col">{{pokemon.tipo}}</th>  
+            <th><button type="button" class="btn btn-outline-primary" [routerLink]="['/pokemon', pokemon.id]">Editar</button>
+            <th><button type="button" class="btn btn-outline-danger" (click)="eliminar(pokemon.id, i)">Eliminar</button></th>             
         </tr>
        
     </tbody>
